@@ -88,16 +88,21 @@
       <!-- The survey results -->
       <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <span class="border border-white">
-        <p>We sort the 75 scenarios by the percentage of workers who agreed with PKL (shown in the title of each card). Scenarios where humans mostly agreed with PKL are at the top; scenarios where humans mostly disagreed are at the bottom.
-        <p>The scene that PKL considers more dangerous is boxed in <font color="green">green</font>. NDS considers the unboxed scene more dangerous.</p>
-        <p>All comments that the workers wrote are shown to the right. The comment is colored <font color="green">green</font> if the commenter agreed with PKL and colored <font color="red">red</font> if the commenter disagreed with PKL.</p>
-        <h5 class='text-center'>Mechanical Turk Instructions</h5>
+        <p><b>Human study results</b> We submit a survey to the Amazon Mechanical Turk service in which humans are asked to vote on whether one set of detection mistakes are more dangerous than another set of detection mistakes. An example of the instructions given to the workers is shown below.
+        </p>
         </span>
         <span class="border border-white">
           <img src='https://github.com/L6whTA/L6whTA.github.io/blob/master/amt.png?raw=true' class="img-fluid" height=240 style="border:5px solid #007bff; border-radius: 25px;">
           <br>
           <br>
         </span>
+
+        <span class="border border-white">
+        <p>
+        We recorded 730 responses and found that human's agreed with PKL (our metric) over NDS in <b>79%</b> of scenarios. The 75 scenarios used in the survey are shown below. For each of the scenarios, the two detection sequences with different detection mistakes are shown on the left. The scene that PKL considers more dangerous is boxed in <font color="green">green</font>. The comments that the workers wrote about each of the scenes are shown to the right. The comment is colored <font color="green">green</font> if the commenter agreed with PKL and colored <font color="red">red</font> if the commenter disagreed with PKL.
+        </p>
+        </span>
+
         <h5 class='text-center'>Mechanical Turk Responses</h5>
         <div id="quizzes"></div>
       </div>
@@ -106,7 +111,7 @@
       <!-- The planner results -->
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           <span class="border border-white">
-          <p>Because we train on all labeled vehicles in the training set, our planner is in theory capable of forecasting in the frame of any detected vehicle in the validation set. For simplicity, we visualize the heatmaps for all future timesteps as a single color with varying transparency. Different objects are given one of ten different colors to facilitate matching between cars and heatmaps.</p>
+          <p><b>Trajectory heatmap visualization</b> We train a model that predicts the future position of the ego vehicle for T timesteps. In the videos below, we visualize the sum of the heatmaps for all future timesteps as a single color for each of the vehicles in the scene. Different objects are given one of ten different colors to facilitate matching cars to their heatmaps. </p>
         </span>
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uS81v4z1eZc" allowfullscreen></iframe>
