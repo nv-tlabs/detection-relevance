@@ -16,14 +16,22 @@
   <body>
 
     <!-- header -->
-    <div class='jumbotron'>
+    <div class='jumbotron' style="background-color:#99ccff">
     <div class="container">
     <h1 class="text-center">Learning to Evaluate Perception Models using Planner-Centric Metrics</h1>
     <p class='text-center'>Jonah Philion, <a href="https://amlankar.github.io/">Amlan Kar</a>, <a href="http://www.cs.toronto.edu/~fidler/">Sanja Fidler</a></p>
     <p class='text-center'>NVIDIA, Vector Institute, University of Toronto</p>
     <p class='text-center'>CVPR 2020 [<a href='https://drive.google.com/file/d/1hR4ijqg55Oj2nzkaGY8oa3VqcXmOgxQt/view?usp=sharing' target="_blank">PDF</a>]</p>
-    <p>
-        The computer vision community generally seeks to maximize the <b>accuracy</b> and <b>precision</b> of its algorithms. The downside of these metrics is that they are <b>task agnostic</b>. For instance, a perception algorithm that always misdetects cars that are right in front of the ego car will be penalized just as much as a perception algorithm that misdetects cars 50 meters behind the ego car. This mismatch between rankings induced by naive accuracy and precision versus human intuition about driving safety can have serious consequences when determining which perception algorithms are ready to be deployed.
+    <p class='text-center'><img src='hello.png' class='img-fluid' style='height:250px; border-radius:15px; padding:5px'><img src='output.gif' class='img-fluid' style='height:250px; border-radius:15px; padding:5px'></p>
+    </div>
+    </div>
+
+    <div class="container">
+
+      <p>
+        Variants of accuracy and precision are the gold-standard by which the computer vision community measures progress of perception algorithms. One reason for the ubiquity of these metrics is that they are largely task-agnostic; we in general seek to detect zero false negatives or positives. The downside of these metrics is that, at worst, they penalize all incorrect detections equally without conditioning on the task or scene, and at best, heuristics need to be chosen to ensure that different mistakes count differently. In this paper, we propose a principled metric for 3D object detection specifically for the task of self-driving. The core idea behind our metric is to isolate the task of object detection and measure the impact the produced detections would induce on the downstream task of driving. Without hand-designing it to, we find that our metric penalizes many of the mistakes that other metrics penalize by design. In addition, our metric downweighs detections based on additional factors such as distance from a detection to the ego car and the speed of the detection in intuitive ways that other detection metrics do not. For human evaluation, we generate scenes in which standard metrics and our metric disagree and find that humans side with our metric 79% of the time.
+
+        <!-- The computer vision community generally seeks to maximize the <b>accuracy</b> and <b>precision</b> of its algorithms. The downside of these metrics is that they are <b>task agnostic</b>. For instance, a perception algorithm that always misdetects cars that are right in front of the ego car will be penalized just as much as a perception algorithm that misdetects cars 50 meters behind the ego car. This mismatch between rankings induced by naive accuracy and precision versus human intuition about driving safety can have serious consequences when determining which perception algorithms are ready to be deployed.
         <br>
         <br>
         We propose a <b>task aware</b> metric for perception specifically for the task of self-driving. The core idea behind our metric is to isolate the task of object detection and measure the impact the produced detections would induce on the downstream task of driving. Without hand-designing it to, we find that our metric penalizes many of the mistakes that other metrics penalize by design. In addition, our metric downweights detections based on additional factors such as distance from a detection to the ego car and the speed of the detection in intuitive ways that other detection metrics do not. For human evaluation, we generate scenes in which standard metrics and our metric disagree and find that <b>humans agree with our metric 80% of the time</b>. We plan to release a publicly available server for evaluating 3D object detectors using our metrics with the aim to better judge readiness of current detectors for deployment on real self-driving platforms.
@@ -34,26 +42,52 @@
           <li><font color="red">Nuscenes Detection Score (NDS)</font> - A <a href=https://arxiv.org/abs/1903.11027>recently proposed metric</a> defined as a weighted sum of accuracy, precision, and hand-designed error functions such as "translation error" and "rotation error" that are only evaluated on detections that satisfy a hand-designed matching criterion.</li>
           <li><font color="green">Planning Kullback–Leibler divergence (PKL)</font> - Our proposed metric defined as the KL-divergence between the distribution of future trajectories produced by a planner evaluated on ground truth detections versus the distribution of trajectories produced by the same planner evaluated on predicted detections.</li>
         </ul>
-        Under "<b>Planner Visual</b>", we show videos of rollouts produced by the planner that we trained to generate the distributions used to calculate PKL.
+        Under "<b>Planner Visual</b>", we show videos of rollouts produced by the planner that we trained to generate the distributions used to calculate PKL. -->
     </p>
-    </div>
-    </div>
 
-    <div class="container">
+    <hr/>
 
+    <span class="border border-white">
+    <h4 class="text-center">News</h4>
+    <ul>
+      <li>[TBA] Evaluation server open</li>
+      <li>[April 2020] Paper released on arXiv</li>
+    </ul>
+    </span>
+
+    <hr/>
+
+    <span class="border border-white">
+      <h4 class="text-center">Paper</h4>
+      <div class='row'>
+        <div class='col'>
+          <img src='icon.jpg' class='img-fluid float-right' style='height:180px; border: solid; border-radius:30px;'>
+        </div>
+        <div class='col'>
+          <p class="card-text">Jonah Philion, Amlan Kar, Sanja Fidler</p>
+          <p class="card-text">Learning to Evaluate Perception Models using Planner-Centric Metrics</p>
+          <p class="card-text">CVPR, 2020. (poster) (to appear)</p>
+          <p class="card-text">[preprint] [bibtex]</p>
+        </div>
+      </div>
+    </span>
+
+    <hr/>
+
+    <h4 class="text-center">Supplementary</h4>
     <nav>
       <div class="nav nav-pills justify-content-center" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">AMT Survey</a>
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Planner Visual</a>
+        <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">AMT Survey</a>
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#eval" role="tab" aria-controls="nav-profile" aria-selected="false">Evaluation Server</a>
       </div>
     </nav>
+
     <div class="tab-content" id="nav-tabContent">
 
       <!-- The survey results -->
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <span class="border border-white">
-        <h4 class="text-center">Description</h4>
         <p>We sort the 75 scenarios by the percentage of workers who agreed with PKL (shown in the title of each card). Scenarios where humans mostly agreed with PKL are at the top; scenarios where humans mostly disagreed are at the bottom.
         <p>The scene that PKL considers more dangerous is boxed in <font color="green">green</font>. NDS considers the unboxed scene more dangerous.</p>
         <p>All comments that the workers wrote are shown to the right. The comment is colored <font color="green">green</font> if the commenter agreed with PKL and colored <font color="red">red</font> if the commenter disagreed with PKL.</p>
@@ -72,7 +106,6 @@
       <!-- The planner results -->
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           <span class="border border-white">
-          <h4 class="text-center">Description</h4>
           <p>Because we train on all labeled vehicles in the training set, our planner is in theory capable of forecasting in the frame of any detected vehicle in the validation set. For simplicity, we visualize the heatmaps for all future timesteps as a single color with varying transparency. Different objects are given one of ten different colors to facilitate matching between cars and heatmaps.</p>
         </span>
         <div class="embed-responsive embed-responsive-16by9">
@@ -108,6 +141,8 @@
       </div>
 
       </div>
+
+      <hr/>
 
       <!-- Add gifs -->
       <script>
