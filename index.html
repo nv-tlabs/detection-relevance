@@ -85,8 +85,9 @@
 
     <hr/>
 
-    <!-- <h4 class='text-center'>Synopsis</h4>
-    We generate pairs of detection mistakes such that, for every pair, NDS ranks one set of detection mistakes worse but PKL considers the other set of detection mistakes worse. We then ask humans to choose which mistake was more dangerous. We find that in 79% of the generated scenarios, the humans side with our metric, PKL.
+    <h4 class='text-center'>Synopsis of Results</h4>
+
+    <b>Human evaluation</b> We generate pairs of detection mistakes such that, for every pair, NDS ranks one set of detection mistakes worse but PKL considers the other set of detection mistakes worse. We then ask humans to choose which mistake was more dangerous. We find that in 79% of the generated scenarios, the humans side with our metric, PKL.
     <div class='row text-center justify-content-md-center'>
       <div class='col-4'>
         <table class="table">
@@ -110,14 +111,26 @@
       </div>
     </div>
 
-    <img src='./importance.jpg' class="img-fluid" height=240>
+    <p><b>Comparison to hand-designed metrics</b> On the left, we show that PKL largely agrees with NDS under canonical noise models such as translation error. On the right, we show that while NDS penalizes false negatives equally independent of context, PKL penalizes false negatives more strongly if the missed detection is close to the ego vehicle or moving at high speeds.</p>
 
-    <hr/> -->
+    <div class='row'>
+      <div class='col-8 text-center'>
+        <img src='align.jpg' height="275px">
+      </div>
+      <div class='col-4 text-center'>
+        <img src='antialign.jpg' height="275px">
+      </div>
+    </div>
+
+    <br>
+    <p><b>False Negative/False Positive Sensitivity</b> We visualize the "importance" that each true object in the scene is detected correctly by removing each object from the scene and re-evaluating the PKL (left). To visualize the sensitivity of PKL to false positives, we place false positives at each position on a grid local to the ego vehicle and evaluate the PKL (right).</p>
+
+    <hr/>
 
     <h4 class="text-center">Supplementary</h4>
     <nav>
       <div class="nav nav-pills justify-content-center" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Planner Visualization</a>
+        <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Planner Visualization</a>
         <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">AMT Survey</a>
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#eval" role="tab" aria-controls="nav-profile" aria-selected="false">Evaluation Server</a>
       </div>
@@ -126,7 +139,7 @@
     <div class="tab-content" id="nav-tabContent">
 
       <!-- The survey results -->
-      <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <span class="border border-white">
         <p><b>Human study results</b> We submit a survey to the Amazon Mechanical Turk service in which humans are asked to vote on whether one set of detection mistakes are more dangerous than another set of detection mistakes. An example of the instructions given to the workers is shown below.
         </p>
@@ -149,7 +162,7 @@
 
 
       <!-- The planner results -->
-      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           <span class="border border-white">
           <p><b>Trajectory heatmap visualization</b> We train a model that predicts the future position of the ego vehicle for T timesteps. In the videos below, we visualize the sum of the heatmaps for all future timesteps as a single color for each of the vehicles in the scene. Different objects are given one of ten different colors to facilitate matching cars to their heatmaps. </p>
         </span>
