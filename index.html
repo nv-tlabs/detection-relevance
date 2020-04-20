@@ -151,55 +151,59 @@
 
       <!-- The survey results -->
       <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <span class="border border-white">
-        <p><b>Human study results</b> We submit a survey to the Amazon Mechanical Turk service in which humans are asked to vote on whether one set of detection mistakes are more dangerous than another set of detection mistakes. An example of the instructions given to the workers is shown below.
-        </p>
-        </span>
-        <span class="border border-white">
-          <img src='https://github.com/L6whTA/L6whTA.github.io/blob/master/amt.png?raw=true' class="img-fluid" height=240 style="border:5px solid #007bff; border-radius: 25px;">
-          <br>
-          <br>
-        </span>
+        <div class='container'>
+          <span class="border border-white">
+          <p><b>Human study results</b> We submit a survey to the Amazon Mechanical Turk service in which humans are asked to vote on whether one set of detection mistakes are more dangerous than another set of detection mistakes. An example of the instructions given to the workers is shown below.
+          </p>
+          </span>
+          <span class="border border-white">
+            <img src='https://github.com/L6whTA/L6whTA.github.io/blob/master/amt.png?raw=true' class="img-fluid" height=240 style="border:5px solid #007bff; border-radius: 25px;">
+            <br>
+            <br>
+          </span>
 
-        <span class="border border-white">
-        <p>
-        We recorded 730 responses and found that human's agreed with PKL (our metric) over NDS in <b>79%</b> of scenarios. The 75 scenarios used in the survey are shown below. For each of the scenarios, the two detection sequences with different detection mistakes are shown on the left. The scene that PKL considers more dangerous is boxed in <font color="green">green</font>. The comments that the workers wrote about each of the scenes are shown to the right. The comment is colored <font color="green">green</font> if the commenter agreed with PKL and colored <font color="red">red</font> if the commenter disagreed with PKL.
-        </p>
-        </span>
+          <span class="border border-white">
+          <p>
+          We recorded 730 responses and found that human's agreed with PKL (our metric) over NDS in <b>79%</b> of scenarios. The 75 scenarios used in the survey are shown below. For each of the scenarios, the two detection sequences with different detection mistakes are shown on the left. The scene that PKL considers more dangerous is boxed in <font color="green">green</font>. The comments that the workers wrote about each of the scenes are shown to the right. The comment is colored <font color="green">green</font> if the commenter agreed with PKL and colored <font color="red">red</font> if the commenter disagreed with PKL.
+          </p>
+          </span>
 
-        <h5 class='text-center'>Mechanical Turk Responses</h5>
-        <div id="quizzes"></div>
+          <h5 class='text-center'>Mechanical Turk Responses</h5>
+          <div id="quizzes"></div>
+        </div>
       </div>
 
 
       <!-- The planner results -->
       <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class='container'>
           <span class="border border-white">
-          <p><b>Distribution over trajectories</b> We train a model that predicts the future position of the ego vehicle for T timesteps. In the videos below, we visualize the sum of the heatmaps for all future timesteps as a single color for each of the vehicles in the scene. Different objects are given one of ten different colors to facilitate matching cars to their heatmaps. </p>
-        </span>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HtWLpcjD_yk" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BI7Gb39z8eY" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mVqqct7GsgY" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j5W2e_aWXXc" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/azuUhN3-nuk" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/F9FBll9shA8" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OyijrTKznMY" allowfullscreen></iframe>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FmjvD3T6CbA" allowfullscreen></iframe>
+            <p><b>Distribution over trajectories</b> We train a model that predicts the future position of the ego vehicle for T timesteps. In the videos below, we visualize the sum of the heatmaps for all future timesteps as a single color for each of the vehicles in the scene. Different objects are given one of ten different colors to facilitate matching cars to their heatmaps. </p>
+          </span>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HtWLpcjD_yk" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BI7Gb39z8eY" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mVqqct7GsgY" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j5W2e_aWXXc" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/azuUhN3-nuk" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/F9FBll9shA8" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OyijrTKznMY" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FmjvD3T6CbA" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
 
