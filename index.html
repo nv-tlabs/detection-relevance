@@ -114,23 +114,25 @@
     <p><b>Comparison to hand-designed metrics</b> On the left, we show that PKL largely agrees with NDS under canonical noise models such as translation error. On the right, we show that while NDS penalizes false negatives equally independent of context, PKL penalizes false negatives more strongly if the missed detection is close to the ego vehicle or moving at high speeds.</p>
 
     <div class='row'>
-      <div class='col-8 text-center'>
-        <img src='align.jpg' height="275px">
+      <div class='col-xs-8 text-center'>
+        <img src='align.jpg' height=300>
       </div>
-      <div class='col-4 text-center'>
-        <img src='antialign.jpg' height="275px">
+      <div class='col-xs-4 text-center'>
+        <img src='antialign.jpg' height=300>
       </div>
     </div>
 
     <br>
     <p><b>False Negative/False Positive Sensitivity</b> We visualize the "importance" that each true object in the scene is detected correctly by removing each object from the scene and re-evaluating the PKL (left). The ego vehicle is shown in green. To visualize the sensitivity of PKL to false positives, we place false positives at each position on a grid local to the ego vehicle and evaluate the PKL (right). Qualitatively, the "worst" false negatives involve objects that are close to the ego vehicle and the "worst" false positives occur in regions where the  ego vehicle is likely to travel in the future.</p>
 
-    <div class='row'>
-      <div class='col-6 text-center'>
-        <img src='importance.gif' height="375px" style="border:1px solid #000000; border-radius: 25px;">
-      </div>
-      <div class='col-6 text-center'>
-        <img src='fpos.gif' height="375px" style="border:1px solid #000000; border-radius: 25px;">
+    
+      <div class='row'>
+        <div class='col-6 text-center'>
+          <img src='importance.gif' class='img-fluid' style="border:1px solid #000000; border-radius: 25px;">
+        </div>
+        <div class='col-6 text-center'>
+          <img src='fpos.gif' class='img-fluid' style="border:1px solid #000000; border-radius: 25px;">
+        </div>
       </div>
     </div>
 
