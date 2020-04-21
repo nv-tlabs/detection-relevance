@@ -1,0 +1,8 @@
+@misc{philion2020learning,
+    title={Learning to Evaluate Perception Models Using Planner-Centric Metrics},
+    author={Jonah Philion and Amlan Kar and Sanja Fidler},
+    year={2020},
+    eprint={2004.08745},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
